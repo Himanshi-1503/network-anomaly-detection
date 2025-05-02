@@ -1,27 +1,6 @@
 # 🛡️ Network Traffic Anomaly Detection using Hybrid and Ensemble Machine Learning Models
 
 This project presents a robust framework for detecting anomalies in network traffic using a **Hybrid Adaptive Anomaly Detection (HAAD)** algorithm and an ensemble of machine learning models (LightGBM, XGBoost, SVM, Random Forest). It addresses class imbalance using GANs, SMOTE, and ADASYN, ensuring improved detection accuracy, especially for rare anomalies.
-## 📁 Project Structure
-.
-├── .venv/ # Virtual environment
-├── network-anomaly-det/ # Main project folder
-│ ├── src/ # Source files
-│ │ ├── check_imbalance.py
-│ │ ├── combine_datasets.py
-│ │ ├── data_preprocessing.py
-│ │ ├── generate_imbalance.py
-│ │ ├── generate_synthetic.py
-│ │ ├── gradient_boosting_model.py
-│ │ ├── haad.py
-│ │ ├── model_evaluation.py
-│ │ ├── run_evaluation.py
-│ │ ├── utils.py
-│ │ └── verify_synthetic.py
-│ ├── combined_dataset.csv
-│ ├── imbalanced_dataset.csv
-│ ├── encoder.keras
-│ └── decoder.keras
-└── README.md
 
 ## 🚀 Features
 - 🔍 **Anomaly Detection** using HAAD and Ensemble Learning.
