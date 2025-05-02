@@ -1,49 +1,74 @@
-# Network Anomaly Detection Project
+# 🛡️ Network Traffic Anomaly Detection using Hybrid and Ensemble Machine Learning Models
 
-This project focuses on detecting anomalies in network traffic using advanced machine learning techniques. The goal is to develop a robust system that can identify unusual patterns in network data, which may indicate potential security threats.
+This project presents a robust framework for detecting anomalies in network traffic using a **Hybrid Adaptive Anomaly Detection (HAAD)** algorithm and an ensemble of machine learning models (LightGBM, XGBoost, SVM, Random Forest). It addresses class imbalance using GANs, SMOTE, and ADASYN, ensuring improved detection accuracy, especially for rare anomalies.
+## 📁 Project Structure
+.
+├── .venv/ # Virtual environment
+├── network-anomaly-det/ # Main project folder
+│ ├── src/ # Source files
+│ │ ├── check_imbalance.py
+│ │ ├── combine_datasets.py
+│ │ ├── data_preprocessing.py
+│ │ ├── generate_imbalance.py
+│ │ ├── generate_synthetic.py
+│ │ ├── gradient_boosting_model.py
+│ │ ├── haad.py
+│ │ ├── model_evaluation.py
+│ │ ├── run_evaluation.py
+│ │ ├── utils.py
+│ │ └── verify_synthetic.py
+│ ├── combined_dataset.csv
+│ ├── imbalanced_dataset.csv
+│ ├── encoder.keras
+│ └── decoder.keras
+└── README.md
 
-## Project Structure
+## 🚀 Features
+- 🔍 **Anomaly Detection** using HAAD and Ensemble Learning.
+- ⚖️ **Class Imbalance Handling** using GAN, SMOTE, and ADASYN.
+- 📊 **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, AUC.
+- 🧠 **Models Used**: Autoencoder, LightGBM, SVM, XGBoost, Random Forest.
+- 🧪 **Tuned via** Grid Search and Bayesian Optimization.
+- 📈 **Visual performance analysis** with ROC and PR curves.
 
-- **data/**: Contains the datasets used in the project.
-  - **raw/**: Directory for raw dataset files.
-  - **processed/**: Directory for processed datasets ready for analysis and model training.
-  - **README.md**: Documentation on the data structure, sources, and preprocessing steps.
+## 🧰 Installation
 
-- **notebooks/**: Jupyter notebooks for various stages of the project.
-  - **data_preprocessing.ipynb**: Code for preprocessing the raw data, including cleaning, normalization, and feature extraction.
-  - **model_training.ipynb**: Code for training various machine learning models, including model selection and hyperparameter tuning.
-  - **model_evaluation.ipynb**: Code for evaluating the performance of trained models using metrics such as accuracy, precision, recall, and F1-score.
+To get started, clone the repository and install dependencies:
+git clone https://github.com/Himanshi-1503/network-anomaly-detection.git
+cd network-anomaly-detection
+python -m venv .venv
+source .venv/bin/activate   # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
 
-- **src/**: Source code for the project.
-  - **data_preprocessing.py**: Functions and classes for data preprocessing tasks.
-  - **model_training.py**: Implementation of the training logic for machine learning models.
-  - **model_evaluation.py**: Functions for evaluating model performance and visualizing results.
-  - **utils.py**: Utility functions for data visualization and logging.
+⚙️ How to Run
+Execute the following scripts in sequence to run the project:
+python src/combine_datasets.py
+python src/data_preprocessing.py
+python src/generate_synthetic.py
+python src/haad.py
+python src/gradient_boosting_model.py
+python src/run_evaluation.py
 
-- **results/**: Directory for storing results of the analysis and evaluation.
-  - **figures/**: Visualizations and figures generated during the analysis.
-  - **logs/**: Log files recording the training and evaluation processes.
-  - **README.md**: Documentation on the results directory, explaining the contents and interpretation of logs and figures.
+📚 Dataset
+Source: The dataset used in this project is synthetically generated.
 
-- **requirements.txt**: List of Python dependencies required for the project.
+Preprocessing Includes:
+Missing value handling
+Normalization
+Feature selection via PCA & RFE
 
-## Setup Instructions
+🧪 Results
+Metric	Score
+Accuracy	92.37%
+Precision	98.37%
+Recall	87.44%
+F1-Score	92.58%
+AUC	0.9364
 
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Install the required dependencies using:
-   ```
-   pip install -r requirements.txt
-   ```
-4. Follow the instructions in the Jupyter notebooks for data preprocessing, model training, and evaluation.
+🔮 Future Enhancements
+Deploy real-time detection with Flask/FastAPI.
+Streaming integration via Kafka/Spark.
+Add explainability with SHAP/LIME.
 
-## Objectives
-
-- To develop a machine learning-based system for detecting anomalies in network traffic.
-- To evaluate the performance of various machine learning models and select the best-performing model.
-- To provide insights and visualizations that aid in understanding network behavior and potential threats.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-# network-anomaly-detection
+👩‍💻 Author
+Himanshi Sahu
