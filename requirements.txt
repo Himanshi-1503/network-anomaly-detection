@@ -5,6 +5,4 @@ matplotlib
 seaborn
 xgboost
 lightgbm
-jupyter
-notebook
 keras
